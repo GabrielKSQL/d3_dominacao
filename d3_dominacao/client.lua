@@ -1,7 +1,7 @@
 local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
-d3 = Tunnel.getInterface("d3_dominacao",d3)
+d3ep = Tunnel.getInterface("d3_dominacao",d3ep)
 
 -------------------------------------------------------------
 -- VARIAVEIS
@@ -50,8 +50,8 @@ Citizen.CreateThread(function()
             if dist <= 15 and not pegando then
                 timeDistance = 4
                 DrawMarker(23,v.x,v.y,v.z-1,0,0,0,0.0,0,0,1.5,1.5,1.5,255,0,0,50,0,0,0,1)
-                if IsControlJustPressed(0, 38) and d3.permissao(v.perm) and dist <= 1 then
-                    if d3.lootear(k) then
+                if IsControlJustPressed(0, 38) and d3ep.permissao(v.perm) and dist <= 1 then
+                    if d3ep.lootear(k) then
                         pegando = true 
                         TriggerEvent('cancelando',true)
                         FreezeEntityPosition(ped, true)
@@ -60,12 +60,12 @@ Citizen.CreateThread(function()
                         SetTimeout(13000, function()
                             FreezeEntityPosition(ped, false)
                             vRP._stopAnim(false)
-                            d3.pagamento(v.perm,v.blip,k)
+                            d3ep.pagamento(v.perm,v.blip,k)
                             TriggerEvent('cancelando',false)
                             pegando = false
                         end)
                     else
-                        TriggerEvent("Notify","negado","Já coletaram o farm!")
+                        TriggerEvent("Notify","negado","Ja pegaram esse farm!")
                     end            
                 end    
             end    
