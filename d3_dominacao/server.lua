@@ -2,8 +2,8 @@ local Tunnel = module("vrp","lib/Tunnel")
 local Proxy = module("vrp","lib/Proxy")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
-d3 = {}
-Tunnel.bindInterface("d3_dominacao",d3)
+d3ep = {}
+Tunnel.bindInterface("d3_dominacao",d3ep)
 
 -----------------------------------------------------------
 -- CHECK USE
@@ -35,7 +35,7 @@ local locais = {
     [10] = {  ['timer'] = 15 },
 }
 
-function d3.lootear(k)
+function d3ep.lootear(k)
     return (locais[k].timer <= 0)
 end
 
@@ -53,7 +53,7 @@ end)
 -----------------------------------------------------------
 -- PERMISSAO
 -----------------------------------------------------------
-function d3.permissao(perm)
+function d3ep.permissao(perm)
     local source = source
     local user_id = vRP.getUserId(source)
     if user_id then 
@@ -67,7 +67,7 @@ end
 ----------------------------------------------------------------
 -- PAGAMENTO
 ----------------------------------------------------------------
-function d3.pagamento(perm,blip,k)
+function d3ep.pagamento(perm,blip,k)
 
     local source = source
     local user_id = vRP.getUserId(source)
@@ -80,72 +80,72 @@ function d3.pagamento(perm,blip,k)
     if user_id then 
         
         if perm == "drogas.permissao" and blip == 1 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("lsd")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("suadrogas")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "lsd", qtdDrogas)
+                vRP.giveInventoryItem(user_id, "suadrogas", qtdDrogas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
         elseif perm == "drogas.permissao" and blip == 2 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("lsd")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("suadrogas2")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "lsd", qtdDrogas)
+                vRP.giveInventoryItem(user_id, "suadrogas2", qtdDrogas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
         elseif perm == "armas.permissao" and blip == 1 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("armacaodeak")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdeak")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "armacaodeak", qtdArmas)
+                vRP.giveInventoryItem(user_id, "seumaterialdeak", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
         elseif perm == "armas.permissao" and blip == 2 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("armacaodemp5")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemp5")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "armacaodemp5", qtdArmas)
+                vRP.giveInventoryItem(user_id, "seumaterialdemp5", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
         elseif perm == "armas.permissao" and blip == 3 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("armacaodetec")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdetec")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "armacaodetec", qtdArmas)
+                vRP.giveInventoryItem(user_id, "seumaterialdetec", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end                   
         elseif perm == "municao.permissao" and blip == 1 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("materialtec")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunidetec")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "materialtec", qtdMunicao)
+                vRP.giveInventoryItem(user_id, "seumaterialdemunidetec", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
         elseif perm == "municao.permissao" and blip == 2 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("materialmp5")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunidemp5")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "materialmp5", qtdMunicao)
+                vRP.giveInventoryItem(user_id, "seumaterialdemunidemp5", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
         elseif perm == "municao.permissao" and blip == 3 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("materialak")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunideak")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "materialak", qtdMunicao)
+                vRP.giveInventoryItem(user_id, "seumaterialdemunideak", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
         elseif perm == "lavagem.permissao" and blip == 1 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("alvejantemodificado")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdelavagem")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "alvejantemodificado", qtdLavagem)
+                vRP.giveInventoryItem(user_id, "seumaterialdelavagem", qtdLavagem)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end  
         elseif perm == "desmanche.permissao" and blip == 1 then
-            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("masterpick")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
+            if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdelock")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
-                vRP.giveInventoryItem(user_id, "masterpick", qtdDesmanche)
+                vRP.giveInventoryItem(user_id, "seumaterialdelock", qtdDesmanche)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end      
