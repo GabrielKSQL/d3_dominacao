@@ -15,28 +15,28 @@ local pegando = false
 local locais = {
     -- DROGAS
 
-    [1] = { ['x'] = 2715.17, ['y'] = 1480.29, ['z'] = 44.56, ['perm'] = "drogas.permissao", ['blip'] = 1},
-    [2] = { ['x'] = 2813.09, ['y'] = 1469.05, ['z'] = 24.74, ['perm'] = "drogas.permissao", ['blip'] = 2},
+    [1] = { ['x'] = 2715.17, ['y'] = 1480.29, ['z'] = 44.56, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 1},
+    [2] = { ['x'] = 2813.09, ['y'] = 1469.05, ['z'] = 24.74, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 2},
 
     -- ARMAS
 
-    [3] = { ['x'] = 1109.91, ['y'] = 2204.97, ['z'] = 48.89, ['perm'] = "armas.permissao", ['blip'] = 1},
-    [4] = { ['x'] = 849.58, ['y'] = 2383.51, ['z'] = 54.16, ['perm'] = "armas.permissao", ['blip'] = 2},
-    [5] = { ['x'] = 1129.15, ['y'] = 2125.17, ['z'] = 55.55, ['perm'] = "armas.permissao", ['blip'] = 3},
+    [3] = { ['x'] = 1109.91, ['y'] = 2204.97, ['z'] = 48.89, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 1},
+    [4] = { ['x'] = 849.58, ['y'] = 2383.51, ['z'] = 54.16, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 2},
+    [5] = { ['x'] = 1129.15, ['y'] = 2125.17, ['z'] = 55.55, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 3},
 
     -- MUNICAO
 
-    [6] = { ['x'] = 52.13, ['y'] = 3742.04, ['z'] = 40.09, ['perm'] = "municao.permissao", ['blip'] = 1},
-    [7] = { ['x'] = 15.37, ['y'] = 3688.73, ['z'] = 39.99, ['perm'] = "municao.permissao", ['blip'] = 2},
-    [8] = { ['x'] = 101.07, ['y'] = 3652.69, ['z'] = 40.65, ['perm'] = "municao.permissao", ['blip'] = 3},
+    [6] = { ['x'] = 52.13, ['y'] = 3742.04, ['z'] = 40.09, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 1},
+    [7] = { ['x'] = 15.37, ['y'] = 3688.73, ['z'] = 39.99, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 2},
+    [8] = { ['x'] = 101.07, ['y'] = 3652.69, ['z'] = 40.65, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 3},
 
     -- LAVAGEM
     
-    [9] = { ['x'] = 2323.77, ['y'] = 2518.49, ['z'] = 46.67, ['perm'] = "lavagem.permissao", ['blip'] = 1},
+    [9] = { ['x'] = 2323.77, ['y'] = 2518.49, ['z'] = 46.67, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 1},
 
     -- DESMANCHE
     
-    [10] = { ['x'] = 2335.37, ['y'] = 4859.95, ['z'] = 41.81, ['perm'] = "desmanche.permissao", ['blip'] = 1},
+    [10] = { ['x'] = 2335.37, ['y'] = 4859.95, ['z'] = 41.81, ['perm'] = "[SUA PERMISSAO]", ['blip'] = 1},
 
 }
 
@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
                             pegando = false
                         end)
                     else
-                        TriggerEvent("Notify","negado","Ja pegaram esse farm!")
+                        TriggerEvent("Notify","negado","Esse farm ja foi pego")
                     end            
                 end    
             end    
