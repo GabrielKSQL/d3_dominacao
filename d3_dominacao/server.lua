@@ -79,70 +79,70 @@ function d3ep.pagamento(perm,blip,k)
 
     if user_id then 
         
-        if perm == "drogas.permissao" and blip == 1 then
+        if perm == "[SUA PERMISSAO]" and blip == 1 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("suadrogas")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "suadrogas", qtdDrogas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
-        elseif perm == "drogas.permissao" and blip == 2 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 2 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("suadrogas2")*qtdDrogas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "suadrogas2", qtdDrogas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
-        elseif perm == "armas.permissao" and blip == 1 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 1 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdeak")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdeak", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
-        elseif perm == "armas.permissao" and blip == 2 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 2 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemp5")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdemp5", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end
-        elseif perm == "armas.permissao" and blip == 3 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 3 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdetec")*qtdArmas <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdetec", qtdArmas)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end                   
-        elseif perm == "municao.permissao" and blip == 1 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 1 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunidetec")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdemunidetec", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
-        elseif perm == "municao.permissao" and blip == 2 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 2 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunidemp5")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdemunidemp5", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
-        elseif perm == "municao.permissao" and blip == 3 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 3 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdemunideak")*qtdMunicao <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdemunideak", qtdMunicao)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end            
-        elseif perm == "lavagem.permissao" and blip == 1 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 1 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdelavagem")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdelavagem", qtdLavagem)
             else
                 TriggerClientEvent("Notify", source, "negado","Mochila Cheia!")
             end  
-        elseif perm == "desmanche.permissao" and blip == 1 then
+        elseif perm == "[SUA PERMISSAO]" and blip == 1 then
             if vRP.getInventoryWeight(user_id)+vRP.getItemWeight("seumaterialdelock")*qtdLavagem <= vRP.getInventoryMaxWeight(user_id) then
                 locais[k].timer = 7200
                 vRP.giveInventoryItem(user_id, "seumaterialdelock", qtdDesmanche)
